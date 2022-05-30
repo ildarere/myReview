@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Название">
+    <meta name="description" content="">
+    <title>Страница 1</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}" >
+    <link rel="stylesheet" th:href="@{/css/film.css}" >
+    <script class="u-script" type="text/javascript" th:src="@{/js/main.js}" defer=""></script>
+    <script class="u-script" type="text/javascript" th:src="@{/js/indexPage.js}" defer=""></script>
+    <script class="u-script" type="text/javascript" th:src="@{/js/film.js}" defer=""></script>
+    <meta name="generator" content="Nicepage 4.11.3, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Страница 1">
+    <meta property="og:type" content="website">
+</head>
+<body class="u-body u-xl-mode">
+<th:block layout:fragment="content">
+<section class="u-clearfix u-section-1" id="sec-09b0">
+    <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+            <div class="u-layout">
+                <div class="u-layout-row">
+                    <div class="u-container-style u-layout-cell u-size-16 u-layout-cell-1">
+                        <div class="u-container-layout u-valign-bottom u-container-layout-1">
+                            <img class="u-image u-image-default u-image-1" src="images/3.svg" alt="" data-image-width="400" data-image-height="265">
+                        </div>
+                    </div>
+                    <div class="u-container-style u-layout-cell u-size-44 u-layout-cell-2">
+                        <div class="u-container-layout u-container-layout-2" th:object ="${film}">
+                            <h1 class="u-text u-text-default u-text-1" th:utext="${film.getName}">Название</h1>
+                            <p class="u-text u-text-2" th:text="${film.getDescription}">Пример текста. Кликните, чтобы выбрать элемент "Текст".</p>
+                            <h6 class="u-text u-text-3" >
+                                <div  th:each="genre: ${genres}">
+                                    <label>Жанр: </label>
+                                    <label th:utext="${genre.getName} +' '"></label>
+                                </div>
+
+                            </h6>
+                            <h6 class="u-text u-text-4" th:utext="'Дата выпуска: '+ ${film.getDate}">Дата выпуска:</h6>
+                            <h6 class="u-text u-text-5" th:utext=" 'Страна: '+${film.getCountry}">Страна:</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3 class="u-text u-text-default u-text-6" th:utext=" 'Рейтинг: '+${Rating}">Рейтинг:&nbsp;</h3>
+    </div>
+
+    <div class="u-form-group u-form-select u-form-group-2">
+        <label for="select-541a" class="u-label">Список</label>
+        <div class="u-form-select-wrapper">
+            <select id="select-541a" name="select" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                <option value="все">Любые</option>
+                <option value="США">США </option>
+                <option value="Британия">Британия </option>
+            </select>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12"  class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+        </div>
+    </div>
+
+</section>
+
+<section class="u-clearfix u-section-2" id="sec-51cb">
+    <div class="u-clearfix u-sheet u-sheet-1">
+        <h4 class="u-align-center u-text u-text-default u-text-1">Рецензии</h4>
+        <hr>
+        <div class="u-expanded-width u-list u-list-1">
+            <div class="u-repeater u-repeater-1">
+
+                <div class="u-container-style u-list-item u-repeater-item" th:each="review: ${reviews}">
+                    <div class="u-container-layout u-similar-container u-container-layout-1">
+                        <h4 class="u-text u-text-default u-text-2" th:text="${review.getNameAuthor}" >Имя</h4>
+                        <h4 class="u-align-center u-text u-text-default u-text-3" th:text="${review.getNameReview}">Название рецензии: фильм крутейший!</h4>
+                        <p class="u-align-center u-text u-text-4" th:text="${review.getLittleText}">Пример текста. Кликните, чтобы выбрать элемент "Текст".Пример текста. Кликните, чтобы выбрать элемент "</p>
+                        <div class="u-shape u-shape-svg u-text-black u-shape-1">
+                            <a th:href="@{/blogPost{id}(id=${review.getId})}">
+                            <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 100" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-6306"></use></svg>
+
+                            <svg class="u-svg-content" viewBox="0 0 160 100" x="0px" y="0px" id="svg-6306" style="enable-background:new 0 0 160 100;"><g><path d="M109.2,99.9L160,50L109.2,0H75.6l38.7,38H0v24.2h114L75.6,100L109.2,99.9z"></path>
+                            </g></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+</th:block>
+</body>
+</html>

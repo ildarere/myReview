@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" xmlns:th="http://www.w3.org/1999/xhtml"  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Медиатека</title>
+    <link rel="stylesheet" th:href="@{css/lib.css}" media="screen">
+
+    <script class="u-script" type="text/javascript" th:src="@{/js/main.js}" defer=""></script>
+    <script class="u-script" type="text/javascript" th:src="@{/js/indexPage.js}" defer=""></script>
+    <script class="u-script" type="text/javascript" th:src="@{/js/LibraryFilter.js}" defer=""></script>
+    <meta name="generator" content="Nicepage 4.11.3, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+
+
+    </script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Страница 2">
+    <meta property="og:type" content="website">
+</head>
+<body class="u-body u-xl-mode">
+
+<th:block layout:fragment="content">
+<section class="u-clearfix u-section-1" id="sec-58ed">
+    <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-list u-list-1">
+            <div class="u-repeater u-repeater-1"  >
+
+                <div class="u-container-style u-list-item u-repeater-item" th:each="film: ${films}">
+                    <div class="u-container-layout u-similar-container u-container-layout-1">
+                        <div class="u-border-1 u-border-grey-dark-1 u-container-style u-custom-item u-expanded-width u-group u-radius-10 u-shape-round u-group-1">
+                            <div class="u-container-layout u-container-layout-2" id="">
+                                <img class="u-image u-image-default u-image-1" th:src="'/images/' + ${film.id} +'.svg'" alt="" >
+                                <h4 class="u-text u-text-default u-text-1" th:text="'Рейтинг: '+${film.getRating}">Рейтинг: 7.5 </h4>
+                                <a th:href="@{/film{id}(id=${film.getId})}">
+                                <h4 class="u-text u-text-default u-text-2"  th:text="${film.getName}">testfilm</h4>
+                                </a>
+                                <p class="u-text u-text-default u-text-3" th:text="'Жанр: '+${film.getName}">Жанр: testfilm</p>
+                                <p class="u-text u-text-default u-text-4" th:text="'Год выпуска: '+${film.getDate}"> Год выпуска:</p>
+                                <p class="u-text u-text-default u-text-5" th:text="'Страна: '+${film.getCountry}"> Страна: </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+        <div class="u-form u-form-1">
+            <form class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
+
+                <div class="u-form-group u-form-select u-form-group-1">
+                    <label for="select-541a" class="u-label">Страна производства</label>
+                    <div class="u-form-select-wrapper">
+                        <select id="select-541a" name="select" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                            <option value="все">Любые</option>
+                            <option value="США">США </option>
+                            <option value="Британия">Британия </option>
+                            <option value="Франция">Франция </option>
+                            <option value="Россия">Россия </option>
+                            <option value="Латвия">Латвия </option>
+                            <option value="Дания">Дания</option>
+                            <option value="Китай">Китай</option>
+                            <option value="Германия">Германия </option>
+                            <option value="Белоруссь">Белоруссь </option>
+                            <option value="Украина">Украина</option>
+                            <option value="Италия">Италия"</option>
+                            <option value="Швейцария">Швейцария</option>
+                            <option value="Австралия">Австралия</option>
+                            <option value="Казахстан">Казахстан</option>
+                        </select>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12"  class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+                    </div>
+                </div>
+                <div class="u-form-group u-form-select u-form-group-2">
+                    <label for="select-8ad7" class="u-label">Жанр</label>
+                    <div class="u-form-select-wrapper">
+                        <select id="select-8ad7" name="select-1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                            <option value="все">Любые</option>
+                            <option value="Боевик">Боевик</option>
+                            <option value="Вестерн">Вестерн</option>
+                            <option value="Гангстерский фильм">Гангстерский фильм</option>
+                            <option value="Детектив">Детектив</option>
+                            <option value="Драма">Драма</option>
+                            <option value="Исторический фильм">Исторический фильм</option>
+                            <option value="Комедия">Комедия</option>
+                            <option value="Мелодрама">Мелодрама</option>
+                            <option value="Музыкальный фильм">Музыкальный фильм</option>
+                            <option value="Нуар">Нуар</option>
+                            <option value="Политический фильм">Политический фильм</option>
+                            <option value="Приключенческий">Приключенческий фильм</option>
+                            <option value="Сказка">Сказка</option>
+                            <option value="Трагедия">Трагедия</option>
+                            <option value="Трагикомедия">Трагикомедия</option>
+                            <option value="Триллер">Триллер</option>
+                            <option value="Фантастический фильм">Фантастический фильм</option>
+                            <option value="Фильм ужасов">Фильм ужасов</option>
+                            <option value="Фильм-катастрофа">Фильм-катастрофа</option>
+                        </select>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12"  class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+                    </div>
+                </div>
+                <div class="u-form-group u-form-group-3">
+                    <label for="text-341b" class="u-label">Год производства</label>
+                    <input type="text" placeholder="Введите период например 1999-2000" id="text-341b" name="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                </div>
+                <div class="u-align-center u-form-group u-form-submit">
+                    <a id="sortBtn" class="u-border-2 u-border-black u-btn u-btn-submit u-button-style u-hover-black u-none u-text-black u-text-hover-white u-btn-1">Сортировать<br>
+                    </a>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+
+
+</th:block>
+</body>
+</html>
