@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <title>Страница 4</title>
+  <link rel="stylesheet" th:href="@{/css/writeReview.css}" media="screen">
+  <script class="u-script" type="text/javascript" th:src="@{/js/reviewSender.js}" defer=""></script>
+  <script class="u-script" type="text/javascript" th:src="@{/js/main.js}" defer=""></script>
+  <script class="u-script" type="text/javascript" th:src="@{/js/indexPage.js}" defer=""></script>
+  <meta name="generator" content="Nicepage 4.11.3, nicepage.com">
+  <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+
+
+
+</head>
+<body class="u-body u-xl-mode">
+<th:block layout:fragment="content">
+<section class="u-align-center u-clearfix u-section-1" id="sec-85f9">
+  <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1"><!--post_details--><!--post_details_options_json--><!--{"source":""}--><!--/post_details_options_json--><!--blog_post-->
+    <div class="u-container-style u-expanded-width u-post-details u-post-details-1">
+      <div class="u-container-layout u-container-layout-1"><!--blog_post_image-->
+        <img alt="" class="u-blog-control u-expanded-width u-image u-image-default u-image-1" src="images/5.jpeg"><!--/blog_post_image-->
+        <div class="u-expanded-width u-form u-form-1">
+          <form action="#"  class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 15px;" source="email" name="form">
+            <div class="u-form-group u-label-none u-form-group-1">
+              <label for="text-4af6" class="u-label">Поле ввода</label>
+
+              <input type="text" placeholder="Название обзора" id="text-4af6" name="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle" required="required">
+            </div>
+            <div class="u-form-group u-form-message u-label-none u-form-group-2">
+              <label for="message-6797" class="u-label">review</label>
+              <textarea placeholder="Напишите здесь обзор" rows="4" cols="50" id="message-6797" name="message" class="u-border-1 u-border-grey-30 u-input u-input-rectangle" required=""></textarea>
+            </div>
+            <div class="rating-area">
+              <input type="radio" id="star-10" name="rating" value="10">
+              <label for="star-10" title="Оценка «10»"></label>
+              <input type="radio" id="star-9" name="rating" value="9">
+              <label for="star-9" title="Оценка «9»"></label>
+              <input type="radio" id="star-8" name="rating" value="8">
+              <label for="star-8" title="Оценка «8»"></label>
+              <input type="radio" id="star-7" name="rating" value="7">
+              <label for="star-7" title="Оценка «7»"></label>
+              <input type="radio" id="star-6" name="rating" value="6">
+              <label for="star-6" title="Оценка «6»"></label>
+              <input type="radio" id="star-5" name="rating" value="5">
+              <label for="star-5" title="Оценка «5»"></label>
+              <input type="radio" id="star-4" name="rating" value="4">
+              <label for="star-4" title="Оценка «4»"></label>
+              <input type="radio" id="star-3" name="rating" value="3">
+              <label for="star-3" title="Оценка «3»"></label>
+              <input type="radio" id="star-2" name="rating" value="2">
+              <label for="star-2" title="Оценка «2»"></label>
+              <input type="radio" id="star-1" name="rating" value="1">
+              <label for="star-1" title="Оценка «1»"></label>
+            </div>
+            <div class="u-align-left u-form-group-3">
+              <a id="sendReview"  th:href="@{/film{id}(id=${filmId})}" class="u-btn  u-button-style">Опубликовать<br>
+              </a>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div><!--/blog_post--><!--/post_details-->
+  </div>
+</section>
+
+
+</th:block>
+
+</body>
+</html>

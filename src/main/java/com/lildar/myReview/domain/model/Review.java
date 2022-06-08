@@ -31,6 +31,7 @@ public class Review {
     }
 
     public String getText() {
+        String newText = text.replace("\n"," <br> ");
         return text;
     }
 

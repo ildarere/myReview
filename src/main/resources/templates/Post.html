@@ -1,6 +1,7 @@
 <!doctype html>
-<html style="font-size: 16px;" xmlns:th="http://www.w3.org/1999/xhtml"  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{layout}"><head>
+<html style="font-size: 16px;" xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}" xmlns:sec="http://www.w3.org/1999/xhtml"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Заголовок 1-го поста">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" th:href="@{css/post.css}" media="screen">
     <script class="u-script" type="text/javascript" th:src="@{/js/main.js}" defer=""></script>
     <script class="u-script" type="text/javascript" th:src="@{/js/indexPage.js}" defer=""></script>
+    <script class="u-script" type="text/javascript" th:src="@{/js/deletePost.js}" defer=""></script>
     <meta name="generator" content="Nicepage 4.11.3, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
 
@@ -29,9 +31,15 @@
                 <h2 class="u-blog-control u-text u-text-1" th:text="${reviewInf.getNameReview}">Заголовок 3-го поста</h2><!--/blog_post_header--><!--blog_post_metadata-->
                 <div class="u-blog-control u-metadata u-metadata-1"><!--blog_post_metadata_date-->
                 </div><!--/blog_post_metadata--><!--blog_post_content-->
-                <div class="u-align-justify u-blog-control u-post-content u-text u-text-2 fr-view" th:text="${reviewInf.getText}" >
+                <div class="u-align-justify u-blog-control u-post-content u-text u-text-2 fr-view" style="white-space: pre-line" th:utext="${reviewInf.getText}" >
                     Пример короткого текста. Lorem ipsum dolor sit amet.
                 </div><!--/blog_post_content-->
+                <div sec:authorize="hasAuthority('ADMIN')">
+                    <a th:href="@{/film{id}(id=${reviewInf.getIdFilm})}" id="deleteReview" class="u-align-right u-border-2 u-border-black u-btn u-button-style u-hover-black u-none u-text-hover-white u-btn-1">Удалить рецензию</a>
+                </div>
+                <div sec:authorize="hasAuthority('USER')">
+                    <a th:href="@{/film{id}(id=${reviewInf.getIdFilm})}" id="appearReview" class="u-align-right u-border-2 u-border-black u-btn u-button-style u-hover-black u-none u-text-hover-white u-btn-1">Пожаловаться на рецензию</a>
+                </div>
             </div>
         </div><!--/blog_post--><!--/post_details-->
     </div>

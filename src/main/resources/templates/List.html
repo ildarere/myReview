@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Страница 3</title>
+
+    <link rel="stylesheet" th:href="@{/css/list.css}" media="screen">
+    <script class="u-script" type="text/javascript" th:src="@{/js/main.js}" defer=""></script>
+    <script class="u-script" type="text/javascript" th:src="@{/js/indexPage.js}" defer=""></script>
+    <meta name="generator" content="Nicepage 4.11.3, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+
+
+
+</head>
+<body class="u-body u-xl-mode">
+<th:block layout:fragment="content">
+    <section class="u-clearfix u-section-1" id="sec-98e6">
+        <div class="u-clearfix u-sheet u-valign-bottom u-sheet-1">
+            <h4 class="u-text u-text-default u-text-1" th:text="${List}">Имя пользователя</h4>
+            <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
+                <div class="u-layout">
+                    <div class="u-layout-row">
+                        <div class="u-container-style u-layout-cell u-size-9 u-layout-cell-1">
+                            <a class="u-container-layout u-container-layout-1" th:href="@{/user{id}/{list}(id=${userId}, list=${backList})}" ></a>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-42 u-layout-cell-2">
+                            <div class="u-container-layout u-container-layout-2">
+                                <div class="u-list u-list-1">
+                                    <div class="u-repeater u-repeater-1">
+
+                                        <div class="u-container-style u-list-item u-repeater-item" th:each="film: ${films}">
+                                            <div class="u-container-layout u-similar-container u-container-layout-5">
+                                                <div class="u-border-1 u-border-grey-dark-1 u-container-style u-custom-item u-expanded-width u-group u-radius-10 u-shape-round u-group-2">
+                                                    <div class="u-container-layout u-container-layout-6">
+                                                        <img class="u-image u-image-default u-image-2" src="images/3.svg" alt="" data-image-width="400" data-image-height="265">
+                                                        <h4 class="u-text u-text-default u-text-6" th:text="'Рейтинг: '+${film.getRating}">Пример заголовка</h4>
+                                                        <a th:href="@{/film{id}(id=${film.getId})}">
+                                                        <h4 class="u-text u-text-default u-text-7 " th:text="${film.getName}">Пример заголовка</h4>
+                                                        </a>
+                                                        <p class="u-text u-text-default u-text-8" th:text="'Жанр: '+${film.getName}">Пример текста. Кликните, чтобы выбрать элемент "Текст".</p>
+                                                        <p class="u-text u-text-default u-text-9" th:text="'Год выпуска: '+${film.getDate}">Жанр:<br>
+                                                        </p>
+                                                        <p class="u-text u-text-default u-text-10" th:text="'Страна: '+${film.getCountry}"><br>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-9 u-layout-cell-3">
+                            <a class="u-container-layout u-container-layout-1" th:href="@{/user{id}/{list}(id=${userId}, list=${nextList})}" ></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</th:block>
+
+
+</body>
+</html>

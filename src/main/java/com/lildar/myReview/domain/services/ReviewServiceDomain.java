@@ -28,4 +28,24 @@ public class ReviewServiceDomain implements ReviewService{
     public Optional<Review> getReviewById(int id) {
         return reviewRepository.findById(id);
     }
+
+    @Override
+    public void addReview(Review review) {
+        reviewRepository.save(review);
+    }
+
+    @Override
+    public void addRating(int filmId, int rating) {
+        reviewRepository.addRating(filmId, rating);
+    }
+
+    @Override
+    public List<Review> getLast3Review() {
+        return reviewRepository.getLast3Review();
+    }
+
+    @Override
+    public void deleteById(int id) {
+        reviewRepository.deleteById(id);
+    }
 }

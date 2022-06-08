@@ -11,7 +11,7 @@ sortBtn.addEventListener('click', ()=>{
             let filter ={
                 country: countryS,
                 genre: genreS,
-                year: yearI
+                years: yearI
             };
 
 

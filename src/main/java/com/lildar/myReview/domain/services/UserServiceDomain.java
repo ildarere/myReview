@@ -44,4 +44,9 @@ public class UserServiceDomain implements UserService{
         userRepository.save(u);
         userRepository.findByEmailAndEnabledTrue(u.getEmail());
     }
+
+    @Override
+    public Optional<User> findById(int userId) {
+        return userRepository.findById(userId);
+    }
 }

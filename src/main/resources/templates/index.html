@@ -24,26 +24,16 @@
         <div class="u-expanded-width u-gallery u-layout-horizontal u-lightbox u-no-transition u-show-text-on-hover u-width-fixed u-gallery-1">
             <div class="u-gallery-inner">
                 <!--start-slider-items-->
-                <div class="u-effect-fade u-gallery-item u-gallery-item-1">
-                    <div class="u-back-slide"><img class="u-back-image u-back-image-1" src="images/5.svg"></div>
+                <div class="u-effect-fade u-gallery-item u-gallery-item-1" th:each="film: ${films}">
+                    <a class="u-post-header-link" th:href="@{/film{id}(id=${film.getId})}">
+                    <div class="u-back-slide">
+
+                        <img class="u-back-image u-back-image-1" src="images/5.svg"> </div>
+
                     <div class="u-over-slide u-shading u-over-slide-1"><h3 class="u-gallery-heading"></h3><p class="u-gallery-text"></p></div>
+                    </a>
                 </div>
-                <div class="u-effect-fade u-gallery-item u-gallery-item-2">
-                    <div class="u-back-slide"><img class="u-back-image u-back-image-2" src="images/5.svg"></div>
-                    <div class="u-over-slide u-shading u-over-slide-2"><h3 class="u-gallery-heading"></h3><p class="u-gallery-text"></p></div>
-                </div>
-                <div class="u-effect-fade u-gallery-item u-gallery-item-3">
-                    <div class="u-back-slide"><img class="u-back-image u-back-image-3" src="images/5.svg"></div>
-                    <div class="u-over-slide u-shading u-over-slide-3"><h3 class="u-gallery-heading"></h3><p class="u-gallery-text"></p></div>
-                </div>
-                <div class="u-effect-fade u-gallery-item u-gallery-item-3">
-                    <div class="u-back-slide"><img class="u-back-image u-back-image-3" src="images/5.svg"></div>
-                    <div class="u-over-slide u-shading u-over-slide-3"><h3 class="u-gallery-heading"></h3><p class="u-gallery-text"></p></div>
-                </div>
-                <div class="u-effect-fade u-gallery-item u-gallery-item-3">
-                    <div class="u-back-slide"><img class="u-back-image u-back-image-3" src="images/5.svg"></div>
-                    <div class="u-over-slide u-shading u-over-slide-3"><h3 class="u-gallery-heading"></h3><p class="u-gallery-text"></p></div>
-                </div>
+
                 <!--end-slider-items-->
 
         </div>
@@ -79,50 +69,26 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
 
 <section class="u-black u-clearfix u-section-2" id="sec-f0df">
     <div class="u-clearfix u-sheet u-valign-middle u-sheet-1"><!--blog--><!--blog_options_json--><!--{"type":"Recent","source":"","tags":"","count":""}--><!--/blog_options_json-->
+        <h2 class="u-text u-text-default u-text-1">Last Reviews</h2>
         <div class="u-blog u-expanded-width u-blog-1">
+
+
             <div class="u-repeater u-repeater-1"><!--blog_post-->
-                <div class="u-align-left u-blog-post u-container-style u-repeater-item u-video-cover">
+
+                <div class="u-align-left u-blog-post u-container-style u-repeater-item u-video-cover" th:each="review: ${reviews}">
                     <div class="u-container-layout u-similar-container u-container-layout-1">
-                        <a class="u-post-header-link" href="blog/пост-5.html"><!--blog_post_image-->
+                        <a class="u-post-header-link" th:href="@{/blogPost{id}(id=${review.getId})}"><!--blog_post_image-->
                             <img alt="" class="u-blog-control u-expanded-width u-image u-image-default u-image-1" th:src="@{/images/3.jpeg}"><!--/blog_post_image-->
                         </a><!--blog_post_header-->
                         <h4 class="u-blog-control u-text u-text-1">
-                            <a class="u-post-header-link" href="blog/пост-5.html"><!--blog_post_header_content-->Заголовок 6-го поста<!--/blog_post_header_content--></a>
+                            <a class="u-post-header-link" th:href="@{/blogPost{id}(id=${review.getId})}" th:text="${review.getNameReview}"><!--blog_post_header_content-->Заголовок 6-го поста<!--/blog_post_header_content--></a>
                         </h4><!--/blog_post_header--><!--blog_post_metadata-->
                         <div class="u-blog-control u-metadata u-text-grey-30 u-metadata-1"><!--blog_post_metadata_date-->
-                            <span class="u-meta-date u-meta-icon"><!--blog_post_metadata_date_content-->Sun May 29 2022<!--/blog_post_metadata_date_content--></span><!--/blog_post_metadata_date--><!--blog_post_metadata_comments-->
-                            <span class="u-meta-comments u-meta-icon"><!--blog_post_metadata_comments_content-->Comments (0)<!--/blog_post_metadata_comments_content--></span><!--/blog_post_metadata_comments-->
                         </div><!--/blog_post_metadata-->
                     </div>
                 </div><!--/blog_post--><!--blog_post-->
-                <div class="u-align-left u-blog-post u-container-style u-repeater-item u-video-cover">
-                    <div class="u-container-layout u-similar-container u-container-layout-2">
-                        <a class="u-post-header-link" href="blog/пост-4.html"><!--blog_post_image-->
-                            <img alt="" class="u-blog-control u-expanded-width u-image u-image-default u-image-2" th:src="@{/images/2.jpeg}"><!--/blog_post_image-->
-                        </a><!--blog_post_header-->
-                        <h4 class="u-blog-control u-text u-text-2">
-                            <a class="u-post-header-link" href="blog/пост-4.html"><!--blog_post_header_content-->Заголовок 5-го поста<!--/blog_post_header_content--></a>
-                        </h4><!--/blog_post_header--><!--blog_post_metadata-->
-                        <div class="u-blog-control u-metadata u-text-grey-30 u-metadata-2"><!--blog_post_metadata_date-->
-                            <span class="u-meta-date u-meta-icon"><!--blog_post_metadata_date_content-->Sun May 29 2022<!--/blog_post_metadata_date_content--></span><!--/blog_post_metadata_date--><!--blog_post_metadata_comments-->
-                            <span class="u-meta-comments u-meta-icon"><!--blog_post_metadata_comments_content-->Comments (0)<!--/blog_post_metadata_comments_content--></span><!--/blog_post_metadata_comments-->
-                        </div><!--/blog_post_metadata-->
-                    </div>
-                </div><!--/blog_post--><!--blog_post-->
-                <div class="u-align-left u-blog-post u-container-style u-repeater-item u-video-cover">
-                    <div class="u-container-layout u-similar-container u-container-layout-3">
-                        <a class="u-post-header-link" href="blog/пост-3.html"><!--blog_post_image-->
-                            <img alt="" class="u-blog-control u-expanded-width u-image u-image-default u-image-3" th:src="@{/images/1.jpeg}"><!--/blog_post_image-->
-                        </a><!--blog_post_header-->
-                        <h4 class="u-blog-control u-text u-text-3">
-                            <a class="u-post-header-link" href="blog/пост-3.html"><!--blog_post_header_content-->Заголовок 4-го поста<!--/blog_post_header_content--></a>
-                        </h4><!--/blog_post_header--><!--blog_post_metadata-->
-                        <div class="u-blog-control u-metadata u-text-grey-30 u-metadata-3"><!--blog_post_metadata_date-->
-                            <span class="u-meta-date u-meta-icon"><!--blog_post_metadata_date_content-->Sun May 29 2022<!--/blog_post_metadata_date_content--></span><!--/blog_post_metadata_date--><!--blog_post_metadata_comments-->
-                            <span class="u-meta-comments u-meta-icon"><!--blog_post_metadata_comments_content-->Comments (0)<!--/blog_post_metadata_comments_content--></span><!--/blog_post_metadata_comments-->
-                        </div><!--/blog_post_metadata-->
-                    </div>
-                </div><!--/blog_post-->
+
+
             </div>
         </div><!--/blog-->
     </div>

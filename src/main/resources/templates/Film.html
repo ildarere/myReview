@@ -50,20 +50,56 @@
                 </div>
             </div>
         </div>
-        <h3 class="u-text u-text-default u-text-6" th:utext=" 'Рейтинг: '+${Rating}">Рейтинг:&nbsp;</h3>
+
+        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-2">
+            <div class="u-layout">
+                <div class="u-layout-row">
+                    <div class="u-container-style u-layout-cell u-size-15 u-layout-cell-3">
+                        <div class="u-container-layout u-valign-top u-container-layout-3">
+                            <h3 class="u-align-left u-text u-text-default u-text-6" th:utext=" 'Рейтинг: '+${Rating}">Рейтинг:&nbsp;</h3>
+                        </div>
+                    </div>
+                    <div class="u-container-style u-layout-cell u-size-15 u-layout-cell-4">
+                        <div class="u-container-layout u-container-layout-4">
+                            <div id="checklist">
+                                <input id="02" type="checkbox" name="r" value="2" th:checked="${isViewed}">
+                                <label for="02">Просмтренно</label>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="u-container-style u-layout-cell u-size-15 u-layout-cell-5">
+                        <div class="u-container-layout u-container-layout-5">
+
+
+                            <div class="u-form-select-wrapper">
+                                <select id="select-541a" name="select" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                                    <option value="none" th:selected="${none}">Без списка</option>
+                                    <option value="fav" th:selected="${Fav}">Любимое</option>
+                                    <option value="plan" th:selected="${Plan}">В планах </option>
+                                    <option value="abad" th:selected="${Abandoned}">Брошено </option>
+                                </select>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12"  class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+                    <div class="u-container-style u-layout-cell u-size-15 u-layout-cell-6">
+                        <div class="u-container-layout u-container-layout-6">
+                            <a th:href="@{/film{id}/writeReview(id=${filmId})}" class="u-align-right u-border-2 u-border-black u-btn u-button-style u-hover-black u-none u-text-hover-white u-btn-1">Добавить рецензию</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <div class="u-form-group u-form-select u-form-group-2">
-        <label for="select-541a" class="u-label">Список</label>
-        <div class="u-form-select-wrapper">
-            <select id="select-541a" name="select" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
-                <option value="все">Любые</option>
-                <option value="США">США </option>
-                <option value="Британия">Британия </option>
-            </select>
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12"  class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
-        </div>
-    </div>
+
 
 </section>
 

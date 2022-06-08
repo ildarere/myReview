@@ -26,11 +26,13 @@
                     </g></svg>
                 </a>
             </div>
-            <div class="u-custom-menu u-nav-container" sec:authorize="isAuthenticated()">
+            <div class="u-custom-menu u-nav-container" sec:authorize="hasAuthority('USER')">
                 <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" th:href="@{/me}" style="padding: 10px 20px;">Профиль</a>
                 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" style="padding: 10px 20px;" th:href="@{/library}">Библиотека</a>
+                </li><li class="u-nav-item" sec:authorize="hasAuthority('ADMIN')"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" th:href="@{/appeal}" style="padding: 10px 20px;">Жалобы</a>
                 </li></ul>
             </div>
+
             <div class="u-custom-menu u-nav-container" sec:authorize="isAnonymous()">
                 <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" th:href="@{/login}" style="padding: 10px 20px;">Войти</a>
                 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" style="padding: 10px 20px;" th:href="@{/library}">Библиотека</a>
@@ -47,6 +49,7 @@
                 </div>
                 <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
             </div>
+
             <div class="u-custom-menu u-nav-container-collapse" sec:authorize="isAnonymous()">
                 <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
                     <div class="u-inner-container-layout u-sidenav-overflow">
@@ -59,14 +62,14 @@
                 <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
             </div>
         </nav>
-        <form action="#" method="get" class="u-grey-50 u-search u-search-left u-search-1">
+        <form  th:action="@{/library}"  method="get" class="u-grey-50 u-search u-search-left u-search-1">
             <button class="u-search-button" type="submit">
             <span class="u-search-icon u-spacing-10">
               <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 56.966 56.966"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-4412"></use></svg>
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg-4412" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" class="u-svg-content"><path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"></path></svg>
             </span>
             </button>
-            <input class="u-search-input u-text-white" type="search" name="search" value="" placeholder="Search">
+            <input class="u-search-input u-text-white" type="text" name="search"  placeholder="Search"   />
         </form>
     </div></header>
 <th:block layout:fragment="content" />

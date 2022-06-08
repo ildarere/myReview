@@ -10,4 +10,10 @@ public interface ReviewService {
     List<Review> getReviewByAuthorId(int id);
     List<Review> getReviewByFilmId(int id);
     Optional<Review> getReviewById(int id);
+
+    void addReview(Review review);
+
+    void addRating(int filmId, int rating);
+    List<Review> getLast3Review();
+    void deleteById(int id);
 }
