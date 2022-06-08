@@ -9,5 +9,5 @@ public interface AppealService {
     void deleteById(int id);
     void deleteByPostId(int id);
 
-    void addAppeal(Appeal appeal);
+    void addAppeal(int postId);
 }

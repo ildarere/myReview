@@ -31,8 +31,7 @@ public class PostController {
     }
     @PostMapping("/blogPost{id}/appearReview")
     public void appealReview(@PathVariable int id, @RequestParam(name = "appearReview", required = false)int reviewJSON) {
-        Appeal appeal =new Appeal();
-        appeal.setPostId(id);
-        appealService.addAppeal(appeal);
+        System.out.println(id +"ssssssssssssssssssssss");
+        appealService.addAppeal(id);
     }
 }

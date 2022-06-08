@@ -26,7 +26,7 @@
                     </g></svg>
                 </a>
             </div>
-            <div class="u-custom-menu u-nav-container" sec:authorize="hasAuthority('USER')">
+            <div class="u-custom-menu u-nav-container" sec:authorize="isAuthenticated()">
                 <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" th:href="@{/me}" style="padding: 10px 20px;">Профиль</a>
                 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" style="padding: 10px 20px;" th:href="@{/library}">Библиотека</a>
                 </li><li class="u-nav-item" sec:authorize="hasAuthority('ADMIN')"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" th:href="@{/appeal}" style="padding: 10px 20px;">Жалобы</a>

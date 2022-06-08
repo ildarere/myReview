@@ -31,7 +31,7 @@ public class AppealServiceDomain implements AppealService{
     }
 
     @Override
-    public void addAppeal(Appeal appeal) {
-        appealRepository.save(appeal);
+    public void addAppeal(int postId) {
+        appealRepository.saveByFilmId(postId);
     }
 }

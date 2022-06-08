@@ -6,7 +6,10 @@ import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.CrudRepository;
 
 public interface AppealRepository extends CrudRepository<Appeal, Integer> {
-    @Query("DELETE FROM  appeals " +
+    @Query("DELETE FROM  appeal " +
             "where id_post = :id ")
     void deletebyPostId(int id);
+@Query("INSERT INTO appeal ( id_post) " +
+        "          VALUES ( :postId)")
+    void saveByFilmId(int postId);
 }
